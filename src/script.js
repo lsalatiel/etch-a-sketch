@@ -1,15 +1,17 @@
 const gridContainer = document.querySelector('#grid-container');
 
+gridContainer.style.gridTemplateColumns = "repeat(16, 1fr)";
+// gridContainer.style.gridTemplateRows = "repeat(16, 1fr)";
+
 for(let i = 0; i < 16*16; i++) {
     const gridItem = document.createElement('div');
     gridItem.classList.add('grid-item');
-    // gridItem.textContent = i + 1;
-    gridContainer.appendChild(gridItem);
     gridItem.style.backgroundColor="rgba(215, 215, 215, 1)";
     gridItem.style.border="1px solid rgba(0, 0, 0, 0.8)";
     gridItem.style.padding="20px";
     gridItem.style.fontSize="30px";
     gridItem.style.textAlign="center";
+    gridContainer.appendChild(gridItem);
 }
 
 gridItens = document.querySelectorAll('.grid-item');
@@ -58,13 +60,12 @@ gridButton.addEventListener('click', () => {
     for(let i = 0; i < gridSize*gridSize; i++) {
         const gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
-        // gridItem.textContent = i + 1;
-        gridContainer.appendChild(gridItem);
         gridItem.style.backgroundColor="rgba(215, 215, 215, 1)";
         gridItem.style.border="1px solid rgba(0, 0, 0, 0.8)";
         gridItem.style.padding="20px";
         gridItem.style.fontSize="30px";
         gridItem.style.textAlign="center";
+        gridContainer.appendChild(gridItem);
     }
 
     gridContainer.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
